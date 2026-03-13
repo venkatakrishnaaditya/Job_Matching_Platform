@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Node
+node_modules/
+build/
+.env.local
+
+# IDE
+.vscode/
+
+# Misc / Dev-only files
+*.log
+db_output.txt
+db_check.json
+jobs_check.json
+dummy.pdf
+generated_resumes/
+diag_resumes/

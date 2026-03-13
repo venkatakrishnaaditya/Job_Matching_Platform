@@ -1,0 +1,456 @@
+.post-job-container {
+  min-height: 100vh;
+  background-color: #D2C1B6;
+  padding: 40px 20px;
+}
+
+.post-job-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.post-job-card h1 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0 0 30px 0;
+  font-size: 16px;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c33;
+}
+
+.post-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  background: #f9f9f9;
+}
+
+.form-section h2 {
+  margin: 0 0 20px 0;
+  color: #456882;
+  font-size: 20px;
+  border-bottom: 2px solid #456882;
+  padding-bottom: 8px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #456882;
+  box-shadow: 0 0 0 3px rgba(69, 104, 130, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.char-count {
+  color: #999;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Skills Input */
+.skills-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skills-input-wrapper input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.skills-input-wrapper small {
+  color: #999;
+  font-size: 12px;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  min-height: 40px;
+  padding: 8px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #456882;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.skill-chip.preferred {
+  background: #3498db;
+}
+
+.skill-chip button {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.skill-chip button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.btn-cancel,
+.btn-submit {
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-cancel {
+  background: #ecf0f1;
+  color: #555;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #d5dbdb;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #456882 0%, #234C6A 100%);
+  color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(69, 104, 130, 0.4);
+}
+
+.btn-cancel:disabled,
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* AI Parsing Styles */
+.parsing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #e8f5e9;
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.parsing-indicator .spinner {
+  animation: spin 1s linear infinite;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* AI Suggestions Card - Matching Form Section Style */
+.ai-suggestions-card {
+  margin-top: 20px;
+  padding: 24px;
+  background: #f0f7ff;
+  border: 2px solid #456882;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(69, 104, 130, 0.15);
+}
+
+.ai-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #456882;
+}
+
+.ai-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #456882;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-suggestions {
+  background: #e0e0e0;
+  border: none;
+  color: #666;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-suggestions:hover {
+  background: #d0d0d0;
+  color: #333;
+  transform: rotate(90deg);
+}
+
+.suggestion-section {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.suggestion-section label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #456882;
+}
+
+.parsed-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.parsed-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: white;
+  color: #333;
+  border: 1px solid #456882;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.parsed-skill-chip:hover {
+  background: #f5f5f5;
+  border-color: #234C6A;
+}
+
+.parsed-skill-chip button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.parsed-skill-chip button:hover {
+  background: #45a049;
+  transform: scale(1.15);
+}
+
+.apply-all-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #456882 0%, #234C6A 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apply-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(69, 104, 130, 0.3);
+}
+
+.suggestion-fields {
+  display: grid;
+  gap: 12px;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.suggestion-item:hover {
+  border-color: #456882;
+  box-shadow: 0 2px 8px rgba(69, 104, 130, 0.1);
+}
+
+.suggestion-label {
+  font-weight: 600;
+  min-width: 100px;
+  color: #456882;
+}
+
+.suggestion-value {
+  flex: 1;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: 'Segoe UI', monospace;
+  color: #333;
+}
+
+.apply-btn {
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #456882 0%, #234C6A 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(69, 104, 130, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .post-job-card {
+    padding: 24px;
+  }
+
+  .post-job-card h1 {
+    font-size: 24px;
+  }
+
+  .form-section {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
+}

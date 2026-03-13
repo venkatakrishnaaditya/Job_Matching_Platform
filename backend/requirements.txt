@@ -1,0 +1,23 @@
+fastapi
+uvicorn
+pymongo
+python-dotenv
+
+# PDF and Document Processing
+pypdf2
+python-docx
+
+# NLP and Text Processing
+spacy
+nltk
+python-multipart
+
+# Machine Learning for Matching
+scikit-learn>=1.0.0
+numpy>=1.20.0
+
+# Additional utilities
+passlib[argon2]
+cloudinary
+pyjwt
+argon2-cffi
